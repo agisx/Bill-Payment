@@ -1,0 +1,5 @@
+Nama pelanggan   : Ella Wahyuni
+Nama Produk      : PLN
+Kode             : 291709573
+Tagihan          : 464929
+Metode Pembayaran: Tunai
