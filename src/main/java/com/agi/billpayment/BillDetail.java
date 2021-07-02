@@ -68,7 +68,6 @@ public class BillDetail extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1031, 500));
-        setPreferredSize(new java.awt.Dimension(1031, 500));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(251, 251, 251));

@@ -1,5 +1,5 @@
-Nama pelanggan   : Ella Wahyuni
+Nama pelanggan   : Eluh Ardianto
 Nama Produk      : PLN
-Kode             : 291709573
-Tagihan          : 464929
-Metode Pembayaran: Tunai
+Kode             : 790865557
+Tagihan          : 448454
+Metode Pembayaran: Non Tunai

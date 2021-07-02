@@ -45,36 +45,6 @@ public class Home extends javax.swing.JFrame{
         JButtonsRekomList.add(jButtonRekom3);
         JButtonsRekomList.add(jButtonRekom4);
         JButtonsRekomList.add(jButtonRekom5);
-        
-        /*
-        jButton = new javax.swing.JButton();
-        jButton.setBackground(new java.awt.Color(248, 248, 248));
-        jButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton.setForeground(new java.awt.Color(14, 15, 16));
-        jButton.setText("Marketpedia");
-        jButton.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        jButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        
-        
-        javax.swing.GroupLayout jPanelRekomListLayout = new javax.swing.GroupLayout(jPanelRekomList);
-        jPanelRekomList.setLayout(jPanelRekomListLayout); 
-        
-        jPanelRekomListLayout.setHorizontalGroup(
-            jPanelRekomListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRekomListLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelRekomListLayout.setVerticalGroup(
-            jPanelRekomListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRekomListLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelRekomListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        */
     }
     
     public BillManagement GetBill(){
@@ -92,7 +62,7 @@ public class Home extends javax.swing.JFrame{
 
         jPanelLogo = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonShowUserCode = new javax.swing.JButton();
         jPanelSearch = new javax.swing.JPanel();
         jTextFieldSearch = new javax.swing.JTextField();
         jPanelProduct = new javax.swing.JPanel();
@@ -115,10 +85,10 @@ public class Home extends javax.swing.JFrame{
         logo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         logo.setText("Tagihan Anda");
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonShowUserCode.setText("Show User Code");
+        jButtonShowUserCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonShowUserCodeActionPerformed(evt);
             }
         });
 
@@ -130,7 +100,7 @@ public class Home extends javax.swing.JFrame{
                 .addContainerGap()
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jButtonShowUserCode)
                 .addGap(76, 76, 76))
         );
         jPanelLogoLayout.setVerticalGroup(
@@ -138,7 +108,7 @@ public class Home extends javax.swing.JFrame{
             .addGroup(jPanelLogoLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(jButtonShowUserCode)
                     .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
@@ -519,21 +489,23 @@ public class Home extends javax.swing.JFrame{
         ProductPicker();
     }//GEN-LAST:event_jButtonRekom5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonShowUserCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowUserCodeActionPerformed
+        System.out.println("==================================================\n");
         for (int i = 0; i < bill.userList.size(); i++) {
-            System.out.println(bill.userList.get(i).nama);
+                System.out.println("Nama user       : " + bill.userList.get(i).nama);
             for (int j = 0; j < bill.userList.get(i).listTagihan.size(); j++) {
-                System.out.print(bill.userList.get(i).listTagihan.get(j).product.nama + " ");
-                System.out.println(bill.userList.get(i).listTagihan.get(j).total);
-                System.out.println(bill.userList.get(i).listTagihan.get(j).kode);
+                int temp = j+1;
+                System.out.println("["+ temp +". Nama produk]: " + bill.userList.get(i).listTagihan.get(j).product.nama + " ");
+                System.out.println("Total tagihan   : " + bill.userList.get(i).listTagihan.get(j).total);
+                System.out.println("Kode            : " + bill.userList.get(i).listTagihan.get(j).kode + "\n"); 
             }
-            System.out.println("");
+            System.out.println("==================================================\n");
         }
         
         for (int i = 0; i < bill.productsList.size(); i++) {
                 System.out.println(bill.productsList.get(i).nama);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonShowUserCodeActionPerformed
         
     
     private void ButtonResultActionPerformed(java.awt.event.ActionEvent evt){
@@ -586,13 +558,13 @@ public class Home extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonRekom0;
     private javax.swing.JButton jButtonRekom1;
     private javax.swing.JButton jButtonRekom2;
     private javax.swing.JButton jButtonRekom3;
     private javax.swing.JButton jButtonRekom4;
     private javax.swing.JButton jButtonRekom5;
+    private javax.swing.JButton jButtonShowUserCode;
     private javax.swing.JPanel jPanelLogo;
     private javax.swing.JPanel jPanelProduct;
     private javax.swing.JPanel jPanelRekomList;
